@@ -1,99 +1,48 @@
-// const elements = {
-//     searchForm: document.querySelector('.js-search-form'),
-//     list: document.querySelector('.js-list')
-// }
-
-// elements.searchForm.addEventListener('submit', handlerSearch);
-// function handlerSearch(evt) {
-//     evt.preventDefault();
-//     const {city, days} = evt.currentTarget.elements;
-
-//     serviceWeather(city.value, days.value)
-//     .then(data =>   elements.list.innerHTML = createMarkup(data.forecast.forecastday))
-//     .catch(error => console.log(error))
-// }
-
-// function serviceWeather(city,days) {
-
-//         BASE_URL = 'http://api.weatherapi.com/v1';
-//         END_POINT = '/forecast.json';
-//         API_KEY =  'da878f99bf3c4ab7b9e94719230409';
-
-//         const params = new URLSearchParams ({
-
-//              key: API_KEY,
-//              q: city,
-//              days: days,
-//              lang: 'en'
-//         });
-
-//         return fetch(`${BASE_URL}${END_POINT}?${params}`)
-//         .then((resp) => {
-
-//             if (!resp.ok) {
-//                 throw new Error(resp.statusText); 
-//             }
-//             return resp.json();
-//         })
-//     }
-
-// function createMarkup(arr) {
-//     return arr.map(({ date, day: {avgtemp_c, condition: {icon, text}}}) =>`<li class='weather-card'>
-//     <img  src="${icon}" alt="${text}" class='weather-icon'>
-//     <h2 class='text'>${date}</h2>
-//     <h3 class='weather-text'>${text}</h3>
-//     <h3 class='text-temp'>${avgtemp_c}°C</h3>
-// </li>`).join('')
-// }
-
-
-
 const elements = {
-  searchForm: document.querySelector(".js-search-form"),
-  list: document.querySelector(".js-list"),
-};
-
-elements.searchForm.addEventListener("submit", handlerSearch);
-
-function handlerSearch(evt) {
-  evt.preventDefault();
-  const { city, days } = evt.currentTarget.elements;
-
-  serviceWeather(city.value, days.value)
-  .then(data => elements.list.innerHTML = createMarkup(data.forecast.forecastday))
-  .catch(err => console.log(err))
-  .finally(() => evt.target.reset())
+    searchForm: document.querySelector('.js-search-form'),
+    list: document.querySelector('.js-list')
 }
 
-function serviceWeather(city, days) {
-  const BASE_URL = "http://api.weatherapi.com/v1";
-  const END_POINT = "/forecast.json";
-  const API_KEY = "6410346f89264d6e919165208231505";
+elements.searchForm.addEventListener('submit', handlerSearch);
+function handlerSearch(evt) {
+    evt.preventDefault();
+    const {city, days} = evt.currentTarget.elements;
 
-  const params = new URLSearchParams({
-    key: API_KEY,
-    q: city,
-    days: days,
-    lang: "uk",
-  });
+    serviceWeather(city.value, days.value)
+    .then(data =>   elements.list.innerHTML = createMarkup(data.forecast.forecastday))
+    .catch(error => console.log(error))
+}
 
-  return fetch(`${BASE_URL}${END_POINT}?${params}`).then((resp) => {
+function serviceWeather(city,days) {
 
-    if (!resp.ok) {
-      throw new Error(resp.statusText);
+        BASE_URL = 'http://api.weatherapi.com/v1';
+        END_POINT = '/forecast.json';
+        API_KEY =  'da878f99bf3c4ab7b9e94719230409';
+
+        const params = new URLSearchParams ({
+
+             key: API_KEY,
+             q: city,
+             days: days,
+             lang: 'en'
+        });
+
+        return fetch(`${BASE_URL}${END_POINT}?${params}`)
+        .then((resp) => {
+
+            if (!resp.ok) {
+                throw new Error(resp.statusText); 
+            }
+            return resp.json();
+        })
     }
 
-    return resp.json();
-  });
-
-  // fetch(`${BASE_URL}${END_POINT}?key=${API_KEY}&q=${city}&days=${days}&lang=uk`)
-}
-
-function createMarkup(arr){
-return arr.map(({date, day : {avgtemp_c , condition : {icon, text}}}) => `<li class="weather-card">
-    <img src="${icon}" alt="${text}" class="weather-icon"/>
-    <h2 class="date">${date}</h2>
-    <h3 class="weather-text">${text}</h3>
-    <h3 class="temperature">${avgtemp_c} °C</h3>
+function createMarkup(arr) {
+    return arr.map(({ date, day: {avgtemp_c, condition: {icon, text}}}) =>`<li class='weather-card'>
+    <img  src="${icon}" alt="${text}" class='weather-icon'>
+    <h2 class='text'>${date}</h2>
+    <h3 class='weather-text'>${text}</h3>
+    <h3 class='text-temp'>${avgtemp_c}°C</h3>
 </li>`).join('')
 }
+
