@@ -1,0 +1,71 @@
+body {
+    background-image: radial-gradient(circle, #0c147d 20%, rgb(51, 145, 148) 70%);
+
+}
+
+select {
+    color: black;
+    background-color: rgb(93, 239, 239);
+}
+
+li {
+    list-style: none;
+}
+
+.weather-cards {
+    display: flex;
+    gap: 50px;
+    justify-content: center
+}
+
+.js-search-form.search-form {}
+
+
+.form-search {
+    display: flex;
+}
+
+.js-list.weather-cards {}
+
+.form-group {}
+
+.label {}
+
+.search-input {
+    width: 50%;
+    margin-left: 250px;
+    margin-top: 150px;
+    font-style: normal;
+    font-size: 50px;
+    padding-top: 80px;
+    padding-left: 150px;
+    border: none;
+    letter-spacing: 0.04em;
+    background-image: radial-gradient(circle, #0c147d 20%, rgb(51, 145, 148) 70%);
+}
+
+.search-input:focus {
+    background-image: radial-gradient(circle, #0c147d 20%, rgb(51, 145, 148) 70%);
+
+}
+
+.search-input::placeholder {
+    padding-left: 15px;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 200px;
+    padding-top: 40px;
+    color: white;
+}
+
+.input-group {}
+
+.days-select {}
+
+.search-button {
+    width: 180px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(88, 187, 206);
+    border-radius: 50%;
+}
