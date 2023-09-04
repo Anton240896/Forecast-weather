@@ -24,7 +24,7 @@ function serviceWeather(city,days) {
              key: API_KEY,
              q: city,
              days: days,
-             lang: 'uk'
+             lang: 'en'
         });
 
         return fetch(`${BASE_URL}${END_POINT}?${params}`)
