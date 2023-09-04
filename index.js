@@ -13,6 +13,7 @@ function handlerSearch(evt) {
     .catch(error => console.log(error))
 }
 
+
 function serviceWeather(city,days) {
 
         BASE_URL = 'http://api.weatherapi.com/v1';
