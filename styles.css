@@ -22,7 +22,7 @@ body::after {
     height: 100px;
     background: white;
     border-radius: 50px;
-    animation: fusion 20s infinite;
+    animation: fusion 13s infinite;
 }
 
 
