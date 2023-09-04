@@ -1,11 +1,51 @@
-body {
-    background-image: radial-gradient(circle, #0c147d 20%, rgb(51, 145, 148) 70%);
+@keyframes fusion {
+    0% {
+        transform: translate(-1000px);
+    }
 
+    100% {
+        transform: translate(1000px);
+    }
+}
+
+body {
+    background: blue;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before,
+body::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100px;
+    background: white;
+    border-radius: 50px;
+    animation: fusion 20s infinite;
+}
+
+
+body::before {
+    top: 50%;
+    left: 50%;
+    width: 250px;
+}
+
+body::after {
+    top: calc(50% - 40px);
+    left: calc(50% + 100px);
+    width: 100px;
+    box-shadow: -58px 18px white;
 }
 
 select {
-    color: black;
-    background-color: rgb(93, 239, 239);
+    color: white;
+    background: blue;
+    border: none;
+    font-size: 29px;
+    cursor: pointer;
+
 }
 
 li {
@@ -25,47 +65,91 @@ li {
     display: flex;
 }
 
-.js-list.weather-cards {}
+@media screen and (min-width: 1200px) {
+    .form-search {
+        display: block;
+        width: 20%;
+        margin-left: 130px;
+        font-style: normal;
+        font-size: 30px;
+        padding-top: 0px;
+        padding-left: 150px;
+        border: none;
+        letter-spacing: 0.04em;
+        background: blue;
+    }
 
-.form-group {}
+    .js-list.weather-cards {}
 
-.label {}
+    .form-group {}
 
-.search-input {
-    width: 50%;
-    margin-left: 250px;
-    margin-top: 150px;
-    font-style: normal;
-    font-size: 50px;
-    padding-top: 80px;
-    padding-left: 150px;
-    border: none;
-    letter-spacing: 0.04em;
-    background-image: radial-gradient(circle, #0c147d 20%, rgb(51, 145, 148) 70%);
+    .label {}
+
+    .search-input {
+        width: 50%;
+        margin-left: 250px;
+        font-style: normal;
+        font-size: 50px;
+        color: white;
+        padding-top: 80px;
+        padding-left: 150px;
+        border: none;
+        letter-spacing: 0.04em;
+        background: blue;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .search-input {
+            width: 300px
+        }
+    }
+
+
+
+
+
+    .search-input:focus {
+        background: blue;
+
+    }
+
+    .search-input::placeholder {
+        padding-left: 15px;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 200px;
+        padding-top: 40px;
+        color: white;
+    }
+
+    .input-group {}
+
+    .days-select {}
+
+    .search-button {
+        width: 180px;
+        cursor: pointer;
+        border: none;
+        background: blue;
+        border-radius: 50%;
+        color: white;
+        font-weight: 14px;
+    }
+
+    @media screen and (max-width: 1200px) {}
 }
 
-.search-input:focus {
-    background-image: radial-gradient(circle, #0c147d 20%, rgb(51, 145, 148) 70%);
 
-}
-
-.search-input::placeholder {
-    padding-left: 15px;
-    font-size: 30px;
-    font-style: italic;
-    font-weight: 200px;
-    padding-top: 40px;
+.text-temp {
     color: white;
 }
 
-.input-group {}
+.weather-text {
+    color: white;
 
-.days-select {}
+}
 
-.search-button {
-    width: 180px;
-    cursor: pointer;
-    border: none;
-    background-color: rgb(88, 187, 206);
-    border-radius: 50%;
+.text {
+    color: white;
+
 }
